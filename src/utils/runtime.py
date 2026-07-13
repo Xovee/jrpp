@@ -20,8 +20,6 @@ def meta_fields_for(config: Dict[str, Any], data_name: str) -> Sequence[str]:
     configured = config.get("data", {}).get("meta_fields", {})
     if data_name in configured:
         return configured[data_name]
-    if data_name == "Instagram" and "INS" in configured:
-        return configured["INS"]
     return DEFAULT_META_FIELDS.get(data_name, [])
 
 

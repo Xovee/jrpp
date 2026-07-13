@@ -1,8 +1,8 @@
 data:
   meta_fields:
-    ICIP: ["mean_views"]
-    SMPD: []
-    Instagram: []
+    icip: ["mean_views"]
+    smpd: []
+    instagram: []
 
 training:
   learning_rate: 0.0001

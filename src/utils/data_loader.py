@@ -11,19 +11,14 @@ from torch.utils.data import Dataset
 
 
 DEFAULT_META_FIELDS: Dict[str, List[str]] = {
-    "ICIP": ["mean_views"],
-    "SMPD": [],
-    "Instagram": [],
-}
-
-LEGACY_DATASET_DIRS = {
-    "Instagram": "INS",
+    "icip": ["mean_views"],
+    "smpd": [],
+    "instagram": [],
 }
 
 SPLIT_FILES = {
     "train": "train.pkl",
     "val": "val.pkl",
-    "valid": "val.pkl",
     "test": "test.pkl",
 }
 
@@ -62,10 +57,7 @@ class PopularityBatch:
 
 
 def _dataset_dir(data_name: str, data_dir: str) -> Path:
-    root = Path(data_dir)
-    canonical = root / data_name
-    legacy = root / LEGACY_DATASET_DIRS.get(data_name, data_name)
-    return canonical if canonical.exists() else legacy
+    return Path(data_dir) / data_name
 
 
 def _split_path(data_name: str, data_dir: str, split: str) -> Path:

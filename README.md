@@ -46,17 +46,17 @@ python -c "import torch, pandas; print(torch.__version__); print(torch.cuda.is_a
 
 
 ```shell
-python src/train.py --data-name ICIP --run-name jrpp
-python src/train.py --data-name SMPD --run-name jrpp
-python src/train.py --data-name Instagram --run-name jrpp
+python src/train.py --data-name icip --run-name jrpp
+python src/train.py --data-name smpd --run-name jrpp
+python src/train.py --data-name instagram --run-name jrpp
 ```
 
 ## Evaluation
 
 ```shell
-python src/test.py --data-name ICIP --model-path results/ICIP/jrpp/JRPP_best.pt
-python src/test.py --data-name SMPD --model-path results/SMPD/jrpp/JRPP_best.pt
-python src/test.py --data-name Instagram --model-path results/Instagram/jrpp/JRPP_best.pt
+python src/test.py --data-name icip --model-path results/icip/jrpp/JRPP_best.pt
+python src/test.py --data-name smpd --model-path results/smpd/jrpp/JRPP_best.pt
+python src/test.py --data-name instagram --model-path results/instagram/jrpp/JRPP_best.pt
 ```
 
 

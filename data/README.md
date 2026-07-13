@@ -3,9 +3,9 @@
 This directory contains the compact datasets used directly by JRPP:
 
 ```text
-ICIP/{train,val,test}.pkl
-SMPD/{train,val,test}.pkl
-Instagram/{train,val,test}.pkl
+icip/{train,val,test}.pkl
+smpd/{train,val,test}.pkl
+instagram/{train,val,test}.pkl
 ```
 
 Each split is a pandas DataFrame with only the fields needed by the model.

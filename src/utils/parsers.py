@@ -1,12 +1,11 @@
 import argparse
 
 
-DATASETS = ("ICIP", "SMPD", "Instagram")
-DATASET_ALIASES = {"INS": "Instagram"}
+DATASETS = ("icip", "smpd", "instagram")
 
 
 def normalize_dataset_name(value: str) -> str:
-    return DATASET_ALIASES.get(value, value)
+    return value.lower()
 
 
 def build_parser(require_model_path: bool = False) -> argparse.ArgumentParser:
@@ -23,9 +22,9 @@ def build_parser(require_model_path: bool = False) -> argparse.ArgumentParser:
         dest="data_name",
         type=normalize_dataset_name,
         choices=DATASETS,
-        default="ICIP",
+        default="icip",
     )
-    parser.add_argument("--data-dir", default="data", help="Directory containing ICIP/SMPD/Instagram split pickles.")
+    parser.add_argument("--data-dir", default="data", help="Directory containing icip/smpd/instagram split pickles.")
     parser.add_argument("--config", default="src/config/config.yaml", help="YAML configuration file.")
     parser.add_argument("--output-dir", dest="save_path", default="results")
 
