@@ -1,0 +1,53 @@
+data:
+  meta_fields:
+    icip: ["mean_views"]
+    smpd: []
+    instagram: []
+
+training:
+  learning_rate: 0.0001
+  weight_decay: 0.0
+  ib_loss_weight: 1.0
+
+retrieval:
+  top_k: 50
+  mol:
+    top_k_method: "MoLAvgTopK100"
+    query_embedding_dim: 1024
+    item_embedding_dim: 1024
+    dot_product_dimension: 256
+    query_dot_product_groups: 16
+    item_dot_product_groups: 16
+    temperature: 0.05
+    query_use_identity_fn: true
+    query_dropout_rate: 0.1
+    query_hidden_dim: 768
+    item_use_identity_fn: true
+    item_dropout_rate: 0.1
+    item_hidden_dim: 768
+    gating_query_hidden_dim: 512
+    gating_qi_hidden_dim: 512
+    gating_item_hidden_dim: 512
+    softmax_dropout_rate: 0.1
+    bf16_training: true
+    gating_query_fn: true
+    gating_item_fn: true
+    dot_product_l2_norm: true
+    query_nonlinearity: "geglu"
+    item_nonlinearity: "geglu"
+    uid_dropout_rate: 0.5
+    uid_embedding_hash_sizes: [100000]
+    uid_embedding_level_dropout: false
+    gating_combination_type: "glu_silu"
+    normalize_gate_logits: true
+    gating_item_dropout_rate: 0.0
+    gating_qi_dropout_rate: 0.0
+    eps: 0.000001
+
+filter:
+  keep_ratio: 0.8
+  hidden_dim: 256
+  ib_dim: 512
+  tau: 1.0
+  beta: 0.0000001
+  use_score: true
